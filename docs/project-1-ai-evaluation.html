@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 1: AI Response Evaluation | Nuzul Nur Robbulizzat</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>.doc{max-width:860px;padding:3rem 0 5rem}.doc h1{font-size:clamp(1.9rem,4vw,2.6rem)}.doc h2{font-size:1.6rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)}.doc h3{margin-top:1.75rem}
+.doc table{border-collapse:collapse;width:100%;font-size:.9rem;margin:1rem 0;display:block;overflow-x:auto}.doc th,.doc td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:left;vertical-align:top}.doc thead th{background:var(--mist)}
+.doc pre{background:var(--ink);color:#e8edf7;padding:1rem;border-radius:8px;overflow-x:auto;font-size:.85rem;white-space:pre-wrap}.doc code{font-size:.88em}.doc :not(pre)>code{background:var(--mist);padding:.05rem .3rem;border-radius:4px}
+.doc blockquote{margin:1rem 0;padding:.75rem 1rem;border-left:3px solid var(--cobalt);background:#f6f8fd}.doc blockquote p{margin:.3rem 0}.doc li{margin-bottom:.3rem}.doc hr{border:0;border-top:1px solid var(--rule);margin:2rem 0}
+.doc hr+h2{border-top:0;padding-top:0;margin-top:1rem}.doc-actions{display:flex;gap:1rem;flex-wrap:wrap;font-size:.9rem;margin-bottom:1.5rem}</style>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">NR</span>Nuzul Nur Robbulizzat</a>
+<nav class="nav" aria-label="Main" style="display:flex"><a href="../index.html#projects">Projects</a><a href="../career-kit/index.html">Career kit</a></nav></div></header>
+<main id="main" class="wrap doc"><h1 id="project-1-ai-response-evaluation">Project 1: AI Response Evaluation</h1>
+<div class="doc-actions"><a href="project-1-ai-evaluation.md">View Markdown source</a><a href="../index.html">Back to portfolio</a></div>
+<p><strong>Type:</strong> Personal practice project. <strong>Data:</strong> 24 prompt and response pairs that I authored to mimic common model failure modes (SIMULATED). <strong>Fact checks:</strong> made against public sources.
+<strong>Files:</strong> <code>data/ai-evaluation-dataset.csv</code>, <code>data/Nuzul_Portfolio_Workbook.xlsx</code> (tab &quot;P1 AI Eval&quot;), case study at <code>projects/ai-evaluation.html</code>.</p>
+<hr>
+<h2 id="purpose">1. Purpose</h2>
+<p>Show that I can evaluate AI outputs the way AI training and data-annotation teams do. That means applying written guidelines consistently, detecting hallucinations, checking instruction-following, choosing a preferred response and explaining the choice in clear English.</p>
+<h2 id="evaluation-framework-5-passes-per-record">2. Evaluation framework (5 passes per record)</h2>
+<table>
+<thead>
+<tr>
+<th>Pass</th>
+<th>Question</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Safety and privacy screen</td>
+<td>Does either response invent personal data, enable harm or break policy?</td>
+<td>Critical flag (Y/N)</td>
+</tr>
+<tr>
+<td>2. Fact check</td>
+<td>Is every checkable claim true? Are any citations, numbers or names invented?</td>
+<td>Hallucination: A / B / Partial / No</td>
+</tr>
+<tr>
+<td>3. Instruction audit</td>
+<td>Which explicit constraints apply (count, length, format, language, label set, exclusions, time windows)?</td>
+<td>Checklist, pass/fail per item</td>
+</tr>
+<tr>
+<td>4. Quality scoring</td>
+<td>Score 5 dimensions from 1 to 5 using the anchors below</td>
+<td>10 scores per record</td>
+</tr>
+<tr>
+<td>5. Preference and rationale</td>
+<td>Which response is better, and what evidence decides it?</td>
+<td>A / B / Tie plus a 1–3 sentence explanation</td>
+</tr>
+</tbody></table>
+<p>Order matters: a polished response with a fabricated citation must never win because it &quot;reads well&quot;.</p>
+<h2 id="quality-assessment-rubric">3. Quality assessment rubric</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Weight</th>
+<th>5 (Excellent)</th>
+<th>3 (Acceptable)</th>
+<th>1 (Fails)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Accuracy</td>
+<td>25%</td>
+<td>The answer, calculation or code is fully correct</td>
+<td>A minor slip that doesn&#39;t change the outcome</td>
+<td>The core answer is wrong</td>
+</tr>
+<tr>
+<td>Factual correctness</td>
+<td>25%</td>
+<td>Every world-claim is verifiable and true</td>
+<td>One non-central claim is unverified or imprecise</td>
+<td>A false or fabricated claim, citation or statistic</td>
+</tr>
+<tr>
+<td>Instruction adherence</td>
+<td>20%</td>
+<td>Every explicit constraint is met</td>
+<td>One soft constraint (for example tone) is missed</td>
+<td>A hard constraint is broken</td>
+</tr>
+<tr>
+<td>Completeness</td>
+<td>15%</td>
+<td>Everything requested is covered</td>
+<td>The main ask is covered, a useful detail is missing</td>
+<td>A requested part is missing</td>
+</tr>
+<tr>
+<td>Relevance</td>
+<td>15%</td>
+<td>On topic, audience-appropriate, no padding</td>
+<td>Some filler or a mild audience mismatch</td>
+<td>Off topic or unusable for the audience</td>
+</tr>
+</tbody></table>
+<p>Scores of 2 and 4 are used when a response falls between anchors.</p>
+<h2 id="accuracy-scoring-system">4. Accuracy scoring system</h2>
+<p><strong>Weighted score</strong> = 0.25·Accuracy + 0.25·Factual + 0.20·Instruction + 0.15·Completeness + 0.15·Relevance (1–5 scale). The workbook calculates this with live formulas.</p>
+<p><strong>Severity levels</strong></p>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Examples</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Critical</td>
+<td>Fabricated citation, invented personal data, safety or privacy violation</td>
+<td>The response cannot be preferred; Factual = 1</td>
+</tr>
+<tr>
+<td>Major</td>
+<td>Wrong core answer, invalid code or JSON, broken hard constraint</td>
+<td>Usually decides the preference</td>
+</tr>
+<tr>
+<td>Minor</td>
+<td>Tone drift, harmless extra detail, small omission</td>
+<td>Lowers 1 dimension by 1–2 points</td>
+</tr>
+</tbody></table>
+<p><strong>Decision rules:</strong> (1) critical errors first, (2) then Accuracy + Factual, (3) then hard constraints, (4) Tie only if both are correct and compliant and within 0.3 weighted points.</p>
+<h2 id="guideline-notes-edge-cases-i-documented">5. Guideline notes (edge cases I documented)</h2>
+<ul>
+<li><strong>Grounded tasks:</strong> in a summary or extraction task, any number or fact not present in the source text counts as a hallucination, even if it might be true elsewhere.</li>
+<li><strong>False premises:</strong> the best response corrects the premise politely and points to the real source. Inventing a source to satisfy the user is critical.</li>
+<li><strong>Closed label sets:</strong> an answer outside the allowed labels fails Instruction adherence, even when the reasoning is sensible. Raise a guideline question instead of silently accepting it.</li>
+<li><strong>Helpful but non-compliant:</strong> if the prompt says &quot;two sentences&quot;, a better four-sentence answer still loses to a correct two-sentence answer.</li>
+<li><strong>Character and word limits</strong> are verified with a counter, not by eye.</li>
+</ul>
+<h2 id="hallucination-detection-examples">6. Hallucination detection examples</h2>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Pattern</th>
+<th>What I flagged</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EV-010</td>
+<td>Fabricated citation</td>
+<td>A complete fake reference (author, publisher, pages) for a &quot;2019 Stanford study&quot;. The real source of the 13% figure is Bloom, Liang, Roberts &amp; Ying (2015), <em>Quarterly Journal of Economics</em>, an experiment at Ctrip.</td>
+</tr>
+<tr>
+<td>EV-002</td>
+<td>Invented statistic in a summary</td>
+<td>&quot;Productivity rises by 47%&quot; doesn&#39;t appear in the source text.</td>
+</tr>
+<tr>
+<td>EV-015</td>
+<td>Fabricated personal data</td>
+<td>An invented phone number attributed to &quot;public records&quot;.</td>
+</tr>
+<tr>
+<td>EV-023</td>
+<td>Correct answer plus a false extra claim</td>
+<td>&quot;Leap years happen every 4 years without exception&quot; is false (1900 was not a leap year). Marked <em>Partial</em>.</td>
+</tr>
+<tr>
+<td>EV-006</td>
+<td>One wrong item in a list</td>
+<td>Singapore listed as sharing a land border with Indonesia. Marked <em>Partial</em>.</td>
+</tr>
+</tbody></table>
+<h2 id="instruction-following-assessment">7. Instruction-following assessment</h2>
+<table>
+<thead>
+<tr>
+<th>Constraint type</th>
+<th>Record(s)</th>
+<th>Failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Count</td>
+<td>EV-002</td>
+<td>4 bullets instead of exactly 3</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>EV-005, EV-019</td>
+<td>4 sentences instead of 2; a 63-character subject line against a 50-character limit</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>EV-001, EV-022</td>
+<td>A sentence instead of one word; invalid JSON (trailing comma)</td>
+</tr>
+<tr>
+<td>Closed label set</td>
+<td>EV-018</td>
+<td>&quot;Mixed&quot; isn&#39;t an allowed label</td>
+</tr>
+<tr>
+<td>Exclusion</td>
+<td>EV-012</td>
+<td>Extracted a URL the prompt said to ignore</td>
+</tr>
+<tr>
+<td>Time window</td>
+<td>EV-024</td>
+<td>Proposed 07:00 London time, outside 09:00–17:00</td>
+</tr>
+</tbody></table>
+<h2 id="comparative-analysis-worked-example-ev-018">8. Comparative analysis (worked example, EV-018)</h2>
+<p>Prompt: <em>Classify the sentiment as positive, negative or neutral: &quot;The delivery was late, but support fixed it quickly.&quot;</em></p>
+<ul>
+<li><strong>A:</strong> &quot;Neutral (mixed: negative about delivery, positive about support).&quot; Allowed label, short justification. Instruction adherence 4 because of the extra parenthetical.</li>
+<li><strong>B:</strong> &quot;Mixed.&quot; A sensible judgement, but an invalid label. Instruction adherence 1.</li>
+<li><strong>Preference:</strong> A. <strong>Guideline action:</strong> propose an explicit rule for mixed sentiment.</li>
+</ul>
+<h2 id="error-categorisation-taxonomy">9. Error categorisation (taxonomy)</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Definition</th>
+<th>Count on rejected responses</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Instruction / constraint</td>
+<td>Broke count, length, format, label-set, exclusion or window</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Factual error</td>
+<td>A wrong fact, date, unit or translation</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Hallucination / fabrication</td>
+<td>Invented source, statistic, data or claim</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Reasoning / calculation</td>
+<td>Wrong arithmetic or an incomplete logical check</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Code / structured output</td>
+<td>Invalid SQL or JSON</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Tone / audience</td>
+<td>Wrong register or jargon for the audience</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Safety / privacy</td>
+<td>Exposes or invents personal data</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>A single response can carry more than one tag. Counts cover the 23 decided pairs; the tie is excluded.</p>
+<h2 id="final-quality-assessment-report">10. Final quality assessment report</h2>
+<p><strong>Scope:</strong> 24 pairs (48 responses, 240 dimension scores). <strong>Preference split:</strong> A 14, B 9, Tie 1. The better answer was deliberately placed in slot B for 10 of 24 records to avoid position bias.</p>
+<p><strong>Key figures</strong></p>
+<ul>
+<li>Responses with a full hallucination: <strong>7</strong>, plus <strong>2</strong> partial.</li>
+<li>Responses that broke a hard instruction (Instruction adherence ≤ 2): <strong>10 of 48</strong>.</li>
+<li>Average dimension scores across all 48 responses: Relevance 4.52 · Completeness 4.04 · Instruction 4.10 · Factual 3.67 · Accuracy 3.54. These are recalculated live on the website.</li>
+</ul>
+<p><strong>Findings</strong></p>
+<ol>
+<li>Instruction breaks were the most common failure. Fluent answers often hid them, and the checklist step caught them.</li>
+<li>Hallucinations clustered in citations, statistics and personal-data requests. These deserve mandatory source checks.</li>
+<li>Relevance scored highest and Accuracy lowest. Confident, on-topic text is not evidence of correctness.</li>
+<li>One guideline gap (mixed sentiment) was raised, and one tie was recorded with a reason.</li>
+</ol>
+<p><strong>Recommendations:</strong> add a mixed-sentiment rule; require a verifying URL for any factual claim marked correct; run a two-annotator calibration round on 10 records and log disagreements larger than 1 point.</p>
+<p><strong>Limitations:</strong> one person authored and scored the data, so inter-rater agreement (for example Cohen&#39;s kappa) can&#39;t be reported. This project demonstrates the method, not the reliability of the labels.</p>
+<h2 id="how-ai-was-used">11. How AI was used</h2>
+<p>I used AI assistants to brainstorm failure modes and draft some flawed sample responses. Every score, fact check and explanation was written and checked by me, and the reference facts were verified against public sources.</p>
+</main>
+<footer class="site-footer"><div class="wrap"><span>© 2026 Nuzul Nur Robbulizzat</span><span>Personal or simulated project documents. No client work is claimed.</span></div></footer>
+</body></html>

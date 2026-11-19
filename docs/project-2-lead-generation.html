@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 2: International B2B Lead Generation | Nuzul Nur Robbulizzat</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>.doc{max-width:860px;padding:3rem 0 5rem}.doc h1{font-size:clamp(1.9rem,4vw,2.6rem)}.doc h2{font-size:1.6rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)}.doc h3{margin-top:1.75rem}
+.doc table{border-collapse:collapse;width:100%;font-size:.9rem;margin:1rem 0;display:block;overflow-x:auto}.doc th,.doc td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:left;vertical-align:top}.doc thead th{background:var(--mist)}
+.doc pre{background:var(--ink);color:#e8edf7;padding:1rem;border-radius:8px;overflow-x:auto;font-size:.85rem;white-space:pre-wrap}.doc code{font-size:.88em}.doc :not(pre)>code{background:var(--mist);padding:.05rem .3rem;border-radius:4px}
+.doc blockquote{margin:1rem 0;padding:.75rem 1rem;border-left:3px solid var(--cobalt);background:#f6f8fd}.doc blockquote p{margin:.3rem 0}.doc li{margin-bottom:.3rem}.doc hr{border:0;border-top:1px solid var(--rule);margin:2rem 0}
+.doc hr+h2{border-top:0;padding-top:0;margin-top:1rem}.doc-actions{display:flex;gap:1rem;flex-wrap:wrap;font-size:.9rem;margin-bottom:1.5rem}</style>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">NR</span>Nuzul Nur Robbulizzat</a>
+<nav class="nav" aria-label="Main" style="display:flex"><a href="../index.html#projects">Projects</a><a href="../career-kit/index.html">Career kit</a></nav></div></header>
+<main id="main" class="wrap doc"><h1 id="project-2-international-b2b-lead-generation">Project 2: International B2B Lead Generation</h1>
+<div class="doc-actions"><a href="project-2-lead-generation.md">View Markdown source</a><a href="../index.html">Back to portfolio</a></div>
+<p><strong>Type:</strong> Personal practice project with a simulated client. <strong>Data:</strong> 100 SYNTHETIC company records. Every name ends in &quot;(fictional)&quot;, websites use the reserved <code>.example</code> domain, and there are no real people or contact details.
+<strong>Files:</strong> <code>data/b2b-leads-synthetic.csv</code>, workbook tab &quot;P2 Leads CRM&quot;, case study at <code>projects/lead-generation.html</code>.</p>
+<hr>
+<h2 id="brief">1. Brief</h2>
+<p><strong>Client (fictional):</strong> OpsBridge, a remote operations-support agency (research, admin, CRM upkeep).
+<strong>Goal:</strong> 100 researched target accounts in the US, UK, Australia and Singapore, scored so the founder can contact the best-fit 20 first.
+<strong>Industries:</strong> SaaS, digital agencies, EdTech, consulting.</p>
+<h2 id="ideal-customer-profile-icp">2. Ideal Customer Profile (ICP)</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Industry</td>
+<td>B2B SaaS, digital and marketing agencies, EdTech, management and operations consulting</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Primary 51–200 employees; secondary 11–50 and 201–500; low fit above 500</td>
+</tr>
+<tr>
+<td>Geography</td>
+<td>US, UK, AU, SG (English-speaking, open to remote contractors, workable overlap with UTC+7)</td>
+</tr>
+<tr>
+<td>Triggers</td>
+<td>Open ops or admin roles; growth signal (funding, new office, headcount growth); uses a CRM such as HubSpot</td>
+</tr>
+<tr>
+<td>Exclusions</td>
+<td>Under 10 staff, sole traders, competitors, any company with a &quot;no solicitation&quot; notice</td>
+</tr>
+</tbody></table>
+<h2 id="buyer-persona-quotoperations-stretched-oliviaquot">3. Buyer persona: &quot;Operations-stretched Olivia&quot;</h2>
+<ul>
+<li><strong>Role:</strong> Head of Operations, 120-person B2B SaaS company.</li>
+<li><strong>Goals:</strong> a clean CRM, on-time weekly reporting, senior staff freed from admin.</li>
+<li><strong>Pains:</strong> headcount freeze, research and data backlog, cross-time-zone hand-offs.</li>
+<li><strong>Triggers:</strong> an ops role open for more than 30 days; a new market launch.</li>
+<li><strong>Objections:</strong> &quot;Offshore quality is inconsistent&quot;; &quot;Onboarding takes too long&quot;.</li>
+<li><strong>Proof she needs:</strong> a small paid pilot, written SOPs, a sample deliverable.</li>
+<li><strong>Channels:</strong> LinkedIn, email; prefers short, specific messages.</li>
+</ul>
+<p><em>This persona is a hypothesis built from typical job descriptions. Validate it with 5–10 buyer conversations.</em></p>
+<h2 id="prospect-research-methodology-sop">4. Prospect research methodology (SOP)</h2>
+<ol>
+<li><strong>Account universe:</strong> LinkedIn company search (industry, headcount, location), curated directories, Google search operators.</li>
+<li><strong>Firmographics:</strong> confirm on the company website (About, Careers, Contact). Log the source URL and access date in the CRM.</li>
+<li><strong>Signals:</strong> careers page and job boards for ops roles; page source or forms for CRM evidence; news for growth.</li>
+<li><strong>Decision-maker title:</strong> use the title map (section 5). For a real client, add names only from public professional profiles, and keep only business contact data.</li>
+<li><strong>Score and tier</strong> (section 6). Verify only Tier A and B.</li>
+<li><strong>QA:</strong> spot-check 10% of rows against their sources; de-duplicate on website domain; normalise country names and size bands; no blank required fields.</li>
+</ol>
+<p><strong>Search operator examples</strong></p>
+<pre><code>site:linkedin.com/company (&quot;SaaS&quot; OR &quot;software&quot;) &quot;51-200 employees&quot; &quot;Singapore&quot;
+site:*.com/careers (&quot;operations coordinator&quot; OR &quot;operations associate&quot;) &quot;remote&quot;
+(&quot;digital agency&quot; OR &quot;marketing agency&quot;) &quot;Manchester&quot; &quot;about us&quot; -jobs
+intitle:&quot;team&quot; &quot;Head of Operations&quot; &quot;EdTech&quot; &quot;Melbourne&quot;
+</code></pre>
+<p><strong>Data dictionary (CRM columns)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Allowed values / format</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lead_id</td>
+<td>LD-###</td>
+</tr>
+<tr>
+<td>company_name, website</td>
+<td>Text; domain only, without &quot;https://&quot;</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>SaaS / Digital Agency / EdTech / Consulting</td>
+</tr>
+<tr>
+<td>country</td>
+<td>United States / United Kingdom / Australia / Singapore</td>
+</tr>
+<tr>
+<td>company_size</td>
+<td>11–50 / 51–200 / 201–500 / 501–1,000</td>
+</tr>
+<tr>
+<td>target_job_title</td>
+<td>From the title map</td>
+</tr>
+<tr>
+<td>signal_*</td>
+<td>Yes / No / Unknown</td>
+</tr>
+<tr>
+<td>priority_score</td>
+<td>0–100 (formula)</td>
+</tr>
+<tr>
+<td>lead_qualification_status</td>
+<td>Qualified – Tier A / Qualified – Tier B / Nurture / Disqualified</td>
+</tr>
+<tr>
+<td>research_source</td>
+<td>Source URLs (synthetic description in this demo)</td>
+</tr>
+<tr>
+<td>contact_verification_status</td>
+<td>Not verified / Verified (date) / Invalid</td>
+</tr>
+</tbody></table>
+<h2 id="decision-maker-identification">5. Decision-maker identification</h2>
+<table>
+<thead>
+<tr>
+<th>Company size</th>
+<th>SaaS</th>
+<th>Agency</th>
+<th>EdTech</th>
+<th>Consulting</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>11–50</td>
+<td>Founder or COO</td>
+<td>Founder / Managing Director</td>
+<td>Founder or Head of Growth</td>
+<td>Managing Partner</td>
+</tr>
+<tr>
+<td>51–200</td>
+<td>Head of Operations, RevOps Manager</td>
+<td>Operations Director</td>
+<td>Head of Growth, Operations Manager</td>
+<td>COO, Practice Lead</td>
+</tr>
+<tr>
+<td>201–500</td>
+<td>VP Sales or Ops (budget); RevOps (champion)</td>
+<td>Head of Client Services</td>
+<td>Director of Partnerships</td>
+<td>COO</td>
+</tr>
+</tbody></table>
+<h2 id="lead-qualification-framework-and-scoring">6. Lead qualification framework and scoring</h2>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Company size</td>
+<td>51–200: 25 · 201–500: 20 · 11–50: 15 · 501–1,000: 8</td>
+</tr>
+<tr>
+<td>Region fit</td>
+<td>US 15 · UK 14 · AU 13 · SG 13</td>
+</tr>
+<tr>
+<td>Hiring for ops or admin roles</td>
+<td>Yes: 20</td>
+</tr>
+<tr>
+<td>Uses HubSpot</td>
+<td>Yes: 15 · Unknown: 5 · No: 0</td>
+</tr>
+<tr>
+<td>Recent growth signal</td>
+<td>Yes: 15</td>
+</tr>
+<tr>
+<td>Data completeness</td>
+<td>0–10</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Score</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Qualified – Tier A</td>
+<td>≥ 78</td>
+<td>Verify the email, start the sequence this week</td>
+</tr>
+<tr>
+<td>Qualified – Tier B</td>
+<td>62–77</td>
+<td>Verify, start the sequence this month</td>
+</tr>
+<tr>
+<td>Nurture</td>
+<td>42–61</td>
+<td>Re-check signals in 60 days</td>
+</tr>
+<tr>
+<td>Disqualified</td>
+<td>&lt; 42</td>
+<td>Archive with a reason</td>
+</tr>
+</tbody></table>
+<p><strong>Result on the synthetic set:</strong> 12 Tier A, 42 Tier B, 38 Nurture, 8 Disqualified.</p>
+<h2 id="email-verification-workflow">7. Email verification workflow</h2>
+<ol>
+<li>Verify Tier A and B only.</li>
+<li>Find the business address from public company sources, or derive a pattern and mark it &quot;pattern – unconfirmed&quot;.</li>
+<li>Check it with a verification tool&#39;s free tier (syntax, domain/MX, mailbox where possible).</li>
+<li>Log the outcome: <strong>Valid</strong> (send) · <strong>Catch-all</strong> (send in small batches and watch bounces) · <strong>Invalid</strong> (remove) · <strong>Unknown</strong> (find another channel).</li>
+<li>Keep bounces low. Pause and re-verify if bounces rise above about 3%.</li>
+<li>Store the verification date and re-verify after 90 days.</li>
+</ol>
+<p>In this demo, the <code>simulated_email_check</code> column shows how results are logged. <strong>No real checks were performed.</strong></p>
+<h2 id="outreach-strategy">8. Outreach strategy</h2>
+<p><strong>Tier A sequence:</strong> Day 1 email → Day 3 LinkedIn connection (no pitch) → Day 6 follow-up with a sample → Day 12 breakup email.</p>
+<p><strong>Email 1 (template)</strong></p>
+<blockquote>
+<p>Subject: Ops backlog at {{Company}}?</p>
+<p>Hi {{FirstName}}, I noticed {{Company}} is hiring for {{OpsRole}}. That&#39;s often a sign the team is stretched while the hire happens.</p>
+<p>OpsBridge covers research, CRM upkeep and weekly reporting for teams in {{Country}}, with written SOPs from week one.</p>
+<p>Worth a 15-minute chat to see if a 2-week pilot would help?</p>
+<p>{{Sender}} · {{Company address}} · Reply &quot;no thanks&quot; and I won&#39;t follow up.</p>
+</blockquote>
+<p><strong>Email 2 (Day 6)</strong></p>
+<blockquote>
+<p>Subject: Re: Ops backlog at {{Company}}?</p>
+<p>Hi {{FirstName}}, here&#39;s a one-page sample of the weekly ops report we&#39;d send your team: {{link}}. Happy to adapt it to your tools.</p>
+</blockquote>
+<p><strong>Email 3 (Day 12)</strong></p>
+<blockquote>
+<p>Subject: Close the loop?</p>
+<p>Hi {{FirstName}}, I&#39;ll assume the timing isn&#39;t right and won&#39;t follow up again. If ops support becomes a priority, just reply to this email.</p>
+</blockquote>
+<h3 id="compliance-notes-by-market">Compliance notes by market</h3>
+<p>These summaries are for briefing a client, not legal advice. Confirm with the client&#39;s counsel before any campaign.</p>
+<table>
+<thead>
+<tr>
+<th>Market</th>
+<th>Rule of thumb</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UK (PECR + UK GDPR)</td>
+<td>Corporate subscribers (limited companies, LLPs) can receive B2B marketing email without prior consent. Sole traders and simple partnerships are treated as individuals and need consent or the soft opt-in. Always include an opt-out.</td>
+<td>Harper James, &quot;B2B marketing and GDPR&quot; (<a href="https://harperjames.co.uk/article/b2b-marketing-and-gdpr-the-basics/">https://harperjames.co.uk/article/b2b-marketing-and-gdpr-the-basics/</a>); ICO guidance (<a href="https://ico.org.uk/for-organisations/advice-for-small-organisations/direct-marketing-and-data-protection/making-marketing-work-for-you-and-your-customers/">https://ico.org.uk/for-organisations/advice-for-small-organisations/direct-marketing-and-data-protection/making-marketing-work-for-you-and-your-customers/</a>)</td>
+</tr>
+<tr>
+<td>Australia (Spam Act 2003)</td>
+<td>Express or inferred consent is required. Inferred consent via &quot;conspicuous publication&quot; works only if there&#39;s no &quot;no marketing&quot; statement and the message relates to the recipient&#39;s role. Include sender ID and an unsubscribe option.</td>
+<td>ALRC Report 108, ch. 73 (<a href="https://www.alrc.gov.au/publication/for-your-information-australian-privacy-law-and-practice-alrc-report-108/73-other-telecommunications-privacy-issues/spam-act/">https://www.alrc.gov.au/publication/for-your-information-australian-privacy-law-and-practice-alrc-report-108/73-other-telecommunications-privacy-issues/spam-act/</a>); Spam Act 2003, Sch. 2 (<a href="https://www.legislation.gov.au/C2004A01214">https://www.legislation.gov.au/C2004A01214</a>)</td>
+</tr>
+<tr>
+<td>Singapore (Spam Control Act 2007 + PDPA)</td>
+<td>Unsolicited commercial email sent in bulk must start its subject line with &quot;<ADV>&quot; and include an unsubscribe option.</td>
+<td>IMDA / DMAS checklist (<a href="https://www.imda.gov.sg/assets/91e5f59f-56af-4e87-8158-5f8047831fd6.pdf">https://www.imda.gov.sg/assets/91e5f59f-56af-4e87-8158-5f8047831fd6.pdf</a>); Chambers Cybersecurity 2025 guide (<a href="https://gpg-pdf.chambers.com/view/902006512/229">https://gpg-pdf.chambers.com/view/902006512/229</a>)</td>
+</tr>
+<tr>
+<td>United States (CAN-SPAM)</td>
+<td>Accurate header and subject, a physical postal address, a clear opt-out honoured promptly.</td>
+<td>FTC, CAN-SPAM Act: A Compliance Guide for Business (<a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business</a>)</td>
+</tr>
+</tbody></table>
+<p>All sources accessed 19 November 2026.</p>
+<h2 id="quality-checks-run-on-the-dataset">9. Quality checks run on the dataset</h2>
+<ul>
+<li>100 unique company names and 100 unique <code>.example</code> domains.</li>
+<li>Every row has a data label, a score and a status; scores are reproducible from the formula.</li>
+<li>Tier counts match between the CSV, the workbook and the website.</li>
+</ul>
+<h2 id="limitations">10. Limitations</h2>
+<p>This dataset is synthetic, so it shows structure, scoring logic and process, not research accuracy. To prove research accuracy, run the same SOP on 20 real companies (company-level data only, from public sources) and show the source URL for every field.</p>
+</main>
+<footer class="site-footer"><div class="wrap"><span>© 2026 Nuzul Nur Robbulizzat</span><span>Personal or simulated project documents. No client work is claimed.</span></div></footer>
+</body></html>

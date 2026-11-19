@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 4: AI-Powered Virtual Assistant Operations System | Nuzul Nur Robbulizzat</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>.doc{max-width:860px;padding:3rem 0 5rem}.doc h1{font-size:clamp(1.9rem,4vw,2.6rem)}.doc h2{font-size:1.6rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)}.doc h3{margin-top:1.75rem}
+.doc table{border-collapse:collapse;width:100%;font-size:.9rem;margin:1rem 0;display:block;overflow-x:auto}.doc th,.doc td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:left;vertical-align:top}.doc thead th{background:var(--mist)}
+.doc pre{background:var(--ink);color:#e8edf7;padding:1rem;border-radius:8px;overflow-x:auto;font-size:.85rem;white-space:pre-wrap}.doc code{font-size:.88em}.doc :not(pre)>code{background:var(--mist);padding:.05rem .3rem;border-radius:4px}
+.doc blockquote{margin:1rem 0;padding:.75rem 1rem;border-left:3px solid var(--cobalt);background:#f6f8fd}.doc blockquote p{margin:.3rem 0}.doc li{margin-bottom:.3rem}.doc hr{border:0;border-top:1px solid var(--rule);margin:2rem 0}
+.doc hr+h2{border-top:0;padding-top:0;margin-top:1rem}.doc-actions{display:flex;gap:1rem;flex-wrap:wrap;font-size:.9rem;margin-bottom:1.5rem}</style>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">NR</span>Nuzul Nur Robbulizzat</a>
+<nav class="nav" aria-label="Main" style="display:flex"><a href="../index.html#projects">Projects</a><a href="../career-kit/index.html">Career kit</a></nav></div></header>
+<main id="main" class="wrap doc"><h1 id="project-4-ai-powered-virtual-assistant-operations-system">Project 4: AI-Powered Virtual Assistant Operations System</h1>
+<div class="doc-actions"><a href="project-4-va-operations.md">View Markdown source</a><a href="../index.html">Back to portfolio</a></div>
+<p><strong>Type:</strong> Personal project with a SIMULATED client week. <strong>Simulated client:</strong> &quot;Brightside Studio&quot; (fictional), a 12-person design studio in London (UTC+0), supported from Indonesia (UTC+7), 3 hours a day.
+<strong>Files:</strong> <code>data/va-weekly-task-tracker.csv</code>, workbook tabs &quot;P4 Task Tracker&quot; and &quot;P4 Weekly Report&quot;, case study at <code>projects/va-operations.html</code>.</p>
+<hr>
+<h2 id="operating-model">1. Operating model</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Shift</td>
+<td>15:00–18:00 WIB (08:00–11:00 London in winter), so the founder&#39;s morning is covered</td>
+</tr>
+<tr>
+<td>Channels</td>
+<td>Email for external work, Slack for internal work, Notion for tasks and documents</td>
+</tr>
+<tr>
+<td>Daily outputs</td>
+<td>Two inbox passes, a task-log update, an end-of-day note</td>
+</tr>
+<tr>
+<td>Weekly outputs</td>
+<td>A weekly report every Friday, next-week priorities, an improvement suggestion</td>
+</tr>
+<tr>
+<td>Access</td>
+<td>Least privilege: delegated mailbox and calendar access, no password sharing (use the client&#39;s password manager)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="email-management-sop">2. Email management SOP</h2>
+<p><strong>Purpose:</strong> keep the founder&#39;s inbox under control without missing anything important.
+<strong>Frequency:</strong> start and end of each shift.</p>
+<p><strong>Labels</strong></p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Meaning</th>
+<th>Who acts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1-Action-Founder</td>
+<td>Needs the founder&#39;s decision or voice</td>
+<td>Founder (with my summary and a draft)</td>
+</tr>
+<tr>
+<td>2-Action-VA</td>
+<td>I can handle it with approved templates</td>
+<td>VA</td>
+</tr>
+<tr>
+<td>3-Waiting</td>
+<td>Waiting on someone else; follow up on the date in the note</td>
+<td>VA</td>
+</tr>
+<tr>
+<td>4-Read-Later</td>
+<td>Newsletters, FYI</td>
+<td>Founder, optional</td>
+</tr>
+<tr>
+<td>5-Receipts</td>
+<td>Invoices, receipts, confirmations</td>
+<td>VA files them to Drive / Finance</td>
+</tr>
+</tbody></table>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Open the inbox, sorted oldest unread first.</li>
+<li>For each email: label it → act (reply, draft, file, forward) → archive.</li>
+<li>Two-minute rule: if an approved template answers it, reply and log it.</li>
+<li><strong>Never send</strong> anything new, financial, legal or emotionally sensitive. Draft it and label it 1-Action-Founder.</li>
+<li>Response targets: clients within 1 business day, vendors within 2, cold pitches no reply unless whitelisted.</li>
+<li>Update <code>3-Waiting</code> follow-ups that are due today.</li>
+<li>Send the end-of-day note (template below).</li>
+</ol>
+<p><strong>End-of-day note</strong></p>
+<pre><code>EOD — [date]
+Handled (4): rescheduled X, sent invoice reminder drafts, filed 6 receipts, replied to 2 FAQs
+Needs you (2): 1) Approve proposal reply to [client] — draft ready  2) Choose Tue/Wed for [meeting]
+Waiting (1): [vendor] quote — follow up Thu
+</code></pre>
+<p><strong>Reply templates (approved by the founder before use)</strong></p>
+<ul>
+<li><em>Meeting request:</em> &quot;Thanks for reaching out. I manage [Founder]&#39;s calendar. Here are three times that work: [times, recipient&#39;s time zone]. Let me know which suits you.&quot;</li>
+<li><em>Invoice reminder (draft only):</em> &quot;Hi [Name], a friendly reminder that invoice [#] for [amount] was due on [date]. Could you confirm when payment is scheduled? The invoice is attached again for convenience.&quot;</li>
+<li><em>Polite decline:</em> &quot;Thank you for thinking of us. We&#39;re not taking on [X] at the moment, but we&#39;ll keep your details on file.&quot;</li>
+</ul>
+<hr>
+<h2 id="calendar-management-workflow">3. Calendar management workflow</h2>
+<ol>
+<li>Protect focus blocks first (marked &quot;Busy – Deep work&quot;).</li>
+<li>Write both time zones in every external event title: &quot;16:00 WIB / 09:00 GMT&quot;.</li>
+<li>15-minute buffers between calls; a maximum of 4 meeting hours a day unless the founder approves.</li>
+<li>Every meeting gets an agenda link (meeting brief template). No agenda 24 hours before means I flag it.</li>
+<li>Confirm external meetings the day before; log reschedules.</li>
+<li>Conflict rule: clients → investors → team → vendors, unless the founder says otherwise.</li>
+<li>Daylight-saving check: re-confirm offsets in the weeks when the UK, US or Australia change clocks.</li>
+</ol>
+<hr>
+<h2 id="meeting-preparation-template">4. Meeting preparation template</h2>
+<pre><code>MEETING BRIEF — [Meeting] — [Date, time in both zones]
+Purpose (1 sentence):
+Decision needed:
+Attendees (name, role, one useful fact from public profile/company site):
+Context: last touchpoint, open items, relevant numbers (source)
+Agenda (with minutes): 1) … 2) … 3) …
+Materials:
+Prepared by / checked against: CRM, email thread, last minutes
+</code></pre>
+<h2 id="meeting-minutes-template">5. Meeting minutes template</h2>
+<pre><code>MINUTES — [Meeting] — [Date]
+Attendees / absent:
+Decisions: D1 … D2 …
+Action items:
+| # | Action | Owner | Due | Status |
+Open questions / parking lot:
+Next meeting:
+Distributed within 2 hours to: [list]
+</code></pre>
+<hr>
+<h2 id="research-documentation-template">6. Research documentation template</h2>
+<pre><code>RESEARCH BRIEF — [Question] — requested by [name] on [date]
+Answer (3 bullets, each with confidence High/Medium/Low):
+Evidence:
+| Claim | Source URL | Published | Accessed | Fact / Estimate |
+Could not verify:
+AI use: [tool] for [summarising/drafting]; every claim checked against sources above
+Time spent: [min]
+</code></pre>
+<hr>
+<h2 id="weekly-reporting-dashboard">7. Weekly reporting dashboard</h2>
+<p>Built in the workbook (&quot;P4 Weekly Report&quot;) with formulas: tasks completed, completion rate, estimated versus actual minutes by category, AI-assisted share, P1 completion.</p>
+<p><strong>Simulated week result:</strong> 17 of 20 tasks done; 1 in progress, 1 not started, 1 blocked.</p>
+<pre><code>WEEKLY REPORT — Week of [date]
+Completed: 17 of 20 tasks · Time logged vs estimate: see sheet
+Wins: …
+Blocked / needs you: newsletter draft waiting on brand assets
+Risks: Drive clean-up in progress (25 of 40 min); finishes Monday
+Next week: 1) … 2) … 3) …
+Suggested improvement: automate form lead → Sheet → Slack alert (prototype built, ready to test)
+</code></pre>
+<hr>
+<h2 id="project-tracking-system">8. Project tracking system</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Values</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Status</td>
+<td>Not started / In progress / Waiting / Blocked / Done</td>
+<td>&quot;Waiting&quot; separates other people&#39;s delays from mine</td>
+</tr>
+<tr>
+<td>Owner</td>
+<td>One person</td>
+<td>Never &quot;team&quot;</td>
+</tr>
+<tr>
+<td>Due + next check-in</td>
+<td>Dates</td>
+<td>Check-in comes before the due date</td>
+</tr>
+<tr>
+<td>Blocker note</td>
+<td>Text</td>
+<td>Written so it can be unblocked with one reply</td>
+</tr>
+<tr>
+<td>Output link</td>
+<td>URL</td>
+<td>Every task links to its file</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="notion-workspace-structure">9. Notion workspace structure</h2>
+<pre><code>Brightside Ops HQ
+├── Inbox &amp; Requests     (database: request, requester, due, status)
+├── Tasks                (views: Today · This week · Waiting · By project)
+├── Projects             (relation → Tasks)
+├── Meetings             (brief + minutes templates; relation → Tasks)
+├── Research Library     (brief template, sources, confidence)
+├── Weekly Reports       (template button, one page per week)
+├── SOPs                 (Email · Calendar · Research · Reporting · Tool access)
+├── AI Prompt Library    (prompt, use case, required human check)
+└── Access &amp; Accounts    (tool, owner, permission level, never passwords)
+</code></pre>
+<hr>
+<h2 id="google-sheets-templates">10. Google Sheets templates</h2>
+<p>The Excel workbook <code>Nuzul_Portfolio_Workbook.xlsx</code> opens in Google Sheets (File → Import). Conventions: blue text marks input cells, black text marks formulas, and each tab has a legend row.</p>
+<ul>
+<li><strong>P4 Task Tracker:</strong> task log with a variance formula (actual − estimate) and a COUNTIF status summary.</li>
+<li><strong>P4 Weekly Report:</strong> SUMIF by category, completion rate, AI-assisted share.</li>
+</ul>
+<h2 id="automation-example-zapier-free-tier-designed-and-documented">11. Automation example (Zapier free tier, designed and documented)</h2>
+<p><strong>Trigger:</strong> new Google Form response (website enquiry) → <strong>Action 1:</strong> add a row to the &quot;Leads&quot; sheet → <strong>Action 2:</strong> post to Slack #leads with name, company and need.
+Note: Zapier&#39;s Free plan allows two-step Zaps only [Zapier pricing, <a href="https://zapier.com/pricing.md">https://zapier.com/pricing.md</a>, accessed 19 Nov 2026], so the free version runs as two separate Zaps, or as one multi-step Zap on a paid plan.
+<strong>Test plan:</strong> submit 3 test entries, confirm the row and message for each, then check failure notifications.</p>
+<hr>
+<h2 id="ai-prompt-library">12. AI prompt library</h2>
+<p>Every prompt has a human checkpoint. Confidential client data goes only into AI tools the client has approved.</p>
+<table>
+<thead>
+<tr>
+<th>Use case</th>
+<th>Prompt</th>
+<th>Human check</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Inbox summary</td>
+<td>&quot;Here are 15 email subjects and first lines. Sort them into Needs founder / I can handle / FYI, with one-line reasons. Don&#39;t invent details that aren&#39;t in the text.&quot;</td>
+<td>Open every &quot;Needs founder&quot; email</td>
+</tr>
+<tr>
+<td>Reply draft</td>
+<td>&quot;Draft a reply in this tone (examples below). Max 120 words. Use [brackets] for anything not given. Don&#39;t promise dates or prices.&quot;</td>
+<td>Fill the brackets; check names, dates and amounts</td>
+</tr>
+<tr>
+<td>Minutes</td>
+<td>&quot;From these notes, list decisions, then action items as a table (action, owner, due). Write UNASSIGNED if there&#39;s no owner.&quot;</td>
+<td>Compare with the notes and confirm owners</td>
+</tr>
+<tr>
+<td>Research summary</td>
+<td>&quot;Summarise only the sources pasted below. Add [source #] after each claim. Say &#39;not in sources&#39; if unsure.&quot;</td>
+<td>Open every source; verify each number</td>
+</tr>
+<tr>
+<td>Weekly report</td>
+<td>&quot;Turn this task log into the weekly report template. Keep all numbers exactly as given; don&#39;t calculate new ones.&quot;</td>
+<td>Recalculate totals in the sheet</td>
+</tr>
+<tr>
+<td>SOP draft</td>
+<td>&quot;Turn these steps I recorded into an SOP with purpose, frequency, steps, and what to do when X fails.&quot;</td>
+<td>Do a dry run of the SOP once</td>
+</tr>
+</tbody></table>
+<p><strong>Tool notes:</strong> I use ChatGPT and Claude for drafting and structuring, and Gemini when working inside Google Workspace. Outputs are never sent without review.</p>
+</main>
+<footer class="site-footer"><div class="wrap"><span>© 2026 Nuzul Nur Robbulizzat</span><span>Personal or simulated project documents. No client work is claimed.</span></div></footer>
+</body></html>

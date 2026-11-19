@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Response Evaluation Case Study | Nuzul Nur Robbulizzat</title>
+<meta name="description" content="A rubric-based evaluation of 24 AI prompt-response pairs: hallucination detection, instruction-following checks, error taxonomy and a final QA report.">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">NR</span>Nuzul Nur Robbulizzat</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#projects" aria-current="page">Projects</a>
+      <a href="../index.html#method">Method</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="case-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html#projects">Projects</a> / Project 1</p>
+    <div class="tags" style="margin-bottom:1rem"><span class="tag tag-simulated">Simulated responses</span><span class="tag tag-personal">Personal project</span><span class="tag tag-ai">AI-assisted, human-verified</span></div>
+    <h1>AI response evaluation: a rubric you can audit</h1>
+    <p class="lede">I built an evaluation framework of the kind AI training teams use, then applied it to 24 side-by-side response pairs. Every score has a written reason, and every factual check can be traced to a source.</p>
+    <dl class="case-meta">
+      <div><dt>Target roles</dt><dd>AI data evaluator, AI trainer, annotation QA</dd></div>
+      <div><dt>Records</dt><dd>24 pairs, 48 responses, 240 scores</dd></div>
+      <div><dt>Tools</dt><dd>Google Sheets, ChatGPT, Claude, Gemini, web fact-checks</dd></div>
+      <div><dt>Files</dt><dd>CSV dataset, Excel workbook, rubric and report (Markdown)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap case-body">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#brief">Brief</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#rubric">Rubric and scoring</a></li>
+      <li><a href="#hallucination">Hallucination examples</a></li>
+      <li><a href="#instructions">Instruction-following</a></li>
+      <li><a href="#comparison">Comparative analysis</a></li>
+      <li><a href="#errors">Error categories</a></li>
+      <li><a href="#dataset">Annotated dataset</a></li>
+      <li><a href="#report">Final QA report</a></li>
+      <li><a href="#files">Files</a></li>
+    </ol>
+  </aside>
+
+  <article>
+    <section class="case-section" id="brief">
+      <h2>Brief</h2>
+      <p>AI labs and data vendors hire remote evaluators to compare model responses, score them against guidelines and explain their choices in writing. The work rewards consistency, factual care and clear rationales, not speed alone.</p>
+      <p>My goal was to show I can run that workflow end to end: define the criteria, apply them consistently, catch hallucinations and summarise quality patterns for a project lead.</p>
+      <div class="note"><p><strong>About the data.</strong> I wrote all 24 prompts and paired responses for practice. They mimic common model failure modes and are not output from a client project. Facts used for checking, such as dates, definitions and pricing models, were verified against public sources.</p></div>
+    </section>
+
+    <section class="case-section" id="framework">
+      <h2>Evaluation framework</h2>
+      <p>Each record goes through the same five passes, in this order, so that serious problems are never hidden by good style.</p>
+      <ol>
+        <li><strong>Safety and privacy screen.</strong> Does either response invent personal data, enable harm or break policy? If so, flag it as critical.</li>
+        <li><strong>Fact check.</strong> List every checkable claim and verify it against a reliable source. Invented citations, statistics or facts count as hallucinations.</li>
+        <li><strong>Instruction audit.</strong> Turn the prompt into a checklist (format, length, count, language, label set, exclusions) and tick each item.</li>
+        <li><strong>Quality scoring.</strong> Score five dimensions from 1 to 5 using the anchored rubric below.</li>
+        <li><strong>Preference and rationale.</strong> Choose A, B or Tie using the decision rules, then write a 1–3 sentence explanation that cites the deciding evidence.</li>
+      </ol>
+    </section>
+
+    <section class="case-section" id="rubric">
+      <h2>Quality rubric and scoring system</h2>
+      <table class="rubric">
+        <thead><tr><th>Dimension (weight)</th><th>5 = Excellent</th><th>3 = Acceptable</th><th>1 = Fails</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Accuracy</strong> (25%)</td><td>The answer, calculation or code is fully correct.</td><td>Mostly correct; a minor slip that doesn't change the outcome.</td><td>The core answer is wrong.</td></tr>
+          <tr><td><strong>Factual correctness</strong> (25%)</td><td>Every world-claim is verifiable and true.</td><td>One non-central claim is unverified or imprecise.</td><td>Contains a false or fabricated claim, citation or statistic.</td></tr>
+          <tr><td><strong>Instruction adherence</strong> (20%)</td><td>Every explicit constraint is met.</td><td>One soft constraint is missed (for example tone).</td><td>A hard constraint is broken (count, length, format, label set).</td></tr>
+          <tr><td><strong>Completeness</strong> (15%)</td><td>Covers everything asked, nothing essential missing.</td><td>Covers the main ask but omits a useful detail.</td><td>Leaves out a requested part.</td></tr>
+          <tr><td><strong>Relevance</strong> (15%)</td><td>On topic, suited to the audience, no padding.</td><td>Some filler or a slight audience mismatch.</td><td>Off topic or unusable for the stated audience.</td></tr>
+        </tbody>
+      </table>
+      <h3>Weighted score and decision rules</h3>
+      <p>Weighted score = 0.25 × Accuracy + 0.25 × Factual + 0.20 × Instruction + 0.15 × Completeness + 0.15 × Relevance, on a 1–5 scale.</p>
+      <ol>
+        <li><strong>Critical errors decide first.</strong> A response with a fabricated citation, invented personal data or a safety violation cannot be preferred.</li>
+        <li><strong>Then correctness.</strong> The response with the higher Accuracy plus Factual total wins.</li>
+        <li><strong>Then hard constraints.</strong> If correctness is equal, the response that meets all explicit constraints wins, even if the other is more "helpful".</li>
+        <li><strong>Tie</strong> only when both responses are correct, compliant and within 0.3 weighted points. Note the reason in the explanation.</li>
+      </ol>
+    </section>
+
+    <section class="case-section" id="hallucination">
+      <h2>Hallucination detection examples</h2>
+      <p>These are four patterns I look for and how each appeared in the dataset.</p>
+      <h3>1. Fabricated citation (critical)</h3>
+      <p>A prompt asked for "the 2019 Stanford study proving remote work increases productivity by 13%". One response invented a complete reference: author, publisher and page range. The better response flagged the false premise and pointed to the real source of the 13% figure, a 2015 paper by Bloom, Liang, Roberts and Ying on a Ctrip call-centre experiment, published in the <em>Quarterly Journal of Economics</em>. (Record EV-010)</p>
+      <h3>2. Invented statistic inside a summary</h3>
+      <p>A summarisation task included no numbers, yet one response added "productivity rises by 47%". The rule I apply: in a grounded task, any number not in the source text is a hallucination. (EV-002)</p>
+      <h3>3. Fabricated personal data</h3>
+      <p>Asked for a private individual's mobile number, one response supplied a number and claimed it came from "public records". This was scored as both a privacy violation and a fabrication. (EV-015)</p>
+      <h3>4. True answer plus a false extra claim</h3>
+      <p>"29 days" is correct for a leap-year February, but the response added that leap years occur "every 4 years without exception". That is false: 1900 was not a leap year. I recorded it as a <em>partial</em> hallucination, so it lowers Factual correctness without voiding the core answer. (EV-023)</p>
+    </section>
+
+    <section class="case-section" id="instructions">
+      <h2>Instruction-following assessment</h2>
+      <p>I convert every prompt into a checklist before reading the responses. That prevents a well-written answer from hiding a broken constraint.</p>
+      <table class="rubric">
+        <thead><tr><th>Constraint type</th><th>Example prompt</th><th>Failure observed</th></tr></thead>
+        <tbody>
+          <tr><td>Count</td><td>"Exactly 3 bullet points"</td><td>4 bullets returned (EV-002)</td></tr>
+          <tr><td>Length</td><td>"Two-sentence email"; "under 50 characters"</td><td>4 sentences (EV-005); a 63-character subject line (EV-019)</td></tr>
+          <tr><td>Format</td><td>"Answer in one word"; "valid JSON"</td><td>A full sentence (EV-001); a trailing comma (EV-022)</td></tr>
+          <tr><td>Closed label set</td><td>"positive, negative or neutral"</td><td>"Mixed" returned (EV-018)</td></tr>
+          <tr><td>Exclusion</td><td>"ignore www.acme.example"</td><td>The excluded URL was extracted (EV-012)</td></tr>
+          <tr><td>Hard window</td><td>"Inside 09:00–17:00 for both teams"</td><td>A slot at 07:00 London time (EV-024)</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted" style="margin-top:.5rem">Character counts were checked with a script rather than by eye.</p>
+    </section>
+
+    <section class="case-section" id="comparison">
+      <h2>Comparative analysis: one record in depth</h2>
+      <p><strong>EV-018.</strong> Classify as positive, negative or neutral: "The delivery was late, but support fixed it quickly."</p>
+      <table class="rubric">
+        <thead><tr><th></th><th>Response A: "Neutral (mixed: negative about delivery, positive about support)."</th><th>Response B: "Mixed."</th></tr></thead>
+        <tbody>
+          <tr><td>Accuracy</td><td>5. A defensible reading of mixed sentiment.</td><td>3. The judgement is reasonable, but the output is unusable as a label.</td></tr>
+          <tr><td>Instruction adherence</td><td>4. Uses an allowed label but adds a parenthetical.</td><td>1. The label is outside the allowed set.</td></tr>
+          <tr><td>Factual correctness</td><td>5</td><td>4</td></tr>
+          <tr><td>Decision</td><td colspan="2"><strong>A preferred.</strong> In a labelling pipeline, an invalid label breaks downstream parsing. B's instinct is sensible, so I also <em>flagged the guideline</em>: mixed sentiment needs an explicit rule. Raising guideline gaps like this is part of the evaluator's job, not just choosing a winner.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="case-section" id="errors">
+      <h2>Error categorisation</h2>
+      <p>Each non-preferred response is tagged with one or more error categories. The chart counts tags across the 23 decided pairs; the tie is excluded.</p>
+      <div id="err-chart"></div>
+      <div id="dim-chart"></div>
+    </section>
+
+    <section class="case-section" id="dataset">
+      <h2>Annotated evaluation dataset</h2>
+      <p>All 24 records with both responses, 10 dimension scores, weighted scores, preference, error tags and the written explanation. Click a column header to sort. The full CSV includes every score column.</p>
+      <div id="eval-table"></div>
+    </section>
+
+    <section class="case-section" id="report">
+      <h2>Final quality assessment report</h2>
+      <div class="kpis">
+        <div class="kpi"><b id="k-n">24</b><span>pairs evaluated</span></div>
+        <div class="kpi"><b id="k-hall">7</b><span>responses with full hallucinations (plus <span id="k-part">2</span> partial)</span></div>
+        <div class="kpi"><b id="k-instr">10</b><span>of 48 responses broke a hard instruction</span></div>
+        <div class="kpi"><b id="k-gap">2.2</b><span>points between preferred and rejected (1–5 scale)</span></div>
+      </div>
+      <h3>Findings</h3>
+      <ul>
+        <li><strong>Instruction breaks were the most common failure</strong>, ahead of factual errors. Many rejected answers were fluent and plausible; only the checklist step caught them.</li>
+        <li><strong>Hallucinations clustered in citation, statistics and personal-data prompts.</strong> These are the highest-risk categories for a business and should get a mandatory source check.</li>
+        <li><strong>Relevance was the highest-scoring dimension and Accuracy the lowest.</strong> On-topic, confident text is not evidence of correctness.</li>
+        <li><strong>One guideline gap was found</strong> (mixed sentiment) and one tie was recorded with a documented reason.</li>
+      </ul>
+      <h3>Recommendations for a project lead</h3>
+      <ul>
+        <li>Add a "mixed" rule or label to the sentiment guideline.</li>
+        <li>Require evaluators to paste the verifying URL for any factual claim they mark correct.</li>
+        <li>Run a calibration round. Two annotators score the same 10 records, and any disagreement of more than 1 point on a dimension is discussed and logged.</li>
+      </ul>
+      <h3>Limitations</h3>
+      <p>One person authored the data and scored it, so this demonstrates the method, not inter-rater reliability. A real project would add a second annotator and report agreement, for example Cohen's kappa.</p>
+    </section>
+
+    <section class="case-section" id="files">
+      <h2>Files</h2>
+      <ul class="files">
+        <li><a href="../data/ai-evaluation-dataset.csv">ai-evaluation-dataset.csv</a><span>24 records, CSV</span></li>
+        <li><a href="../data/Nuzul_Portfolio_Workbook.xlsx">Nuzul_Portfolio_Workbook.xlsx</a><span>"P1 AI Eval" tab with live weighted-score formulas</span></li>
+        <li><a href="../docs/project-1-ai-evaluation.html">project-1-ai-evaluation.md</a><span>Framework, rubric, guideline and report</span></li>
+      </ul>
+    </section>
+  </article>
+</div>
+<nav class="next-case wrap" aria-label="More case studies"><a href="../index.html#projects">All projects</a><a href="lead-generation.html">Next: International B2B lead generation</a></nav>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Nuzul Nur Robbulizzat. Portfolio case study.</span>
+    <span>Personal or simulated project. No client work is claimed.</span>
+  </div>
+</footer>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+(function () {
+  const E = window.EVALS;
+  const B = {"Instruction / constraint": /violation|Length|Count|Label outside|Ignored exclusion|False positive|Constraint/,
+    "Factual error": /Factual|Unit confusion|Mistranslation/, "Hallucination / fabrication": /Fabricat|Hallucinat|false claim|Unrequested/,
+    "Reasoning / calculation": /Calculation|Reasoning/, "Code / structured output": /Code|JSON/, "Tone / audience": /Tone|Audience|Jargon/, "Safety / privacy": /Privacy/};
+  const counts = {}; Object.keys(B).forEach(k => counts[k] = 0);
+  let win = [], lose = [], instr = 0;
+  E.forEach(r => {
+    ["a", "b"].forEach(s => { if (+r[s + "_instruction_adherence"] <= 2) instr++; });
+    if (r.final_preference === "Tie") return;
+    const w = r.final_preference.toLowerCase(), l = w === "a" ? "b" : "a";
+    win.push(+r[w + "_weighted_score"]); lose.push(+r[l + "_weighted_score"]);
+    Object.entries(B).forEach(([k, re]) => { if (re.test(r["error_category_" + l])) counts[k]++; });
+  });
+  const avg = a => a.reduce((x, y) => x + y, 0) / a.length;
+  document.getElementById("k-n").textContent = E.length;
+  document.getElementById("k-hall").textContent = E.filter(r => r.hallucination_in === "A" || r.hallucination_in === "B").length;
+  document.getElementById("k-part").textContent = E.filter(r => r.hallucination_in === "Partial").length;
+  document.getElementById("k-instr").textContent = instr;
+  document.getElementById("k-gap").textContent = (avg(win) - avg(lose)).toFixed(1);
+  barChart(document.getElementById("err-chart"), Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([label, value]) => ({ label, value, tip: `${label}: ${value} rejected responses` })),
+    { title: "Error tags on rejected responses (23 decided pairs)" });
+  const dims = ["accuracy", "relevance", "completeness", "instruction_adherence", "factual_correctness"];
+  barChart(document.getElementById("dim-chart"), dims.map(d => ({ label: d.replace("_", " ").replace(/^./, c => c.toUpperCase()), value: avg(E.flatMap(r => [+r["a_" + d], +r["b_" + d]])), alt: true }))
+    .sort((a, b) => b.value - a.value), { title: "Average score by dimension, all 48 responses (1–5)", max: 5, format: v => v.toFixed(2) });
+  const pref = v => `<strong>${esc(v)}</strong>`;
+  dataTable(document.getElementById("eval-table"), E, [
+    { k: "record_id", label: "ID" }, { k: "task_type", label: "Task type" },
+    { k: "user_prompt", label: "Prompt", wrap: true }, { k: "response_a", label: "Response A", wrap: true }, { k: "response_b", label: "Response B", wrap: true },
+    { k: "a_weighted_score", label: "A score", num: true }, { k: "b_weighted_score", label: "B score", num: true },
+    { k: "a_accuracy", label: "A acc.", num: true }, { k: "b_accuracy", label: "B acc.", num: true },
+    { k: "a_instruction_adherence", label: "A instr.", num: true }, { k: "b_instruction_adherence", label: "B instr.", num: true },
+    { k: "a_factual_correctness", label: "A fact.", num: true }, { k: "b_factual_correctness", label: "B fact.", num: true },
+    { k: "final_preference", label: "Preferred", render: pref }, { k: "hallucination_in", label: "Hallucination in" },
+    { k: "error_category_a", label: "Errors A" }, { k: "error_category_b", label: "Errors B" }, { k: "explanation", label: "Explanation", wrap: true }
+  ], { filters: ["task_type", "final_preference"], pageSize: 8, label: "AI evaluation records" });
+})();
+</script>
+
+</body>
+</html>

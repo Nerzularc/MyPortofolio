@@ -1,0 +1,21 @@
+task_id,data_label,day,category,task,priority,status,est_minutes,actual_minutes,ai_assisted,tools
+VA-001,SIMULATED,Mon,Email,Triage overnight inbox (42 emails) using label system,P1,Done,30,25,Yes,Gmail + Claude
+VA-002,SIMULATED,Mon,Calendar,Resolve double-booking for Tue 10:00 (SG/UK),P1,Done,15,15,No,Google Calendar
+VA-003,SIMULATED,Mon,Research,Shortlist 10 podcast guests in B2B ops niche,P2,Done,90,80,Yes,Google Search + ChatGPT
+VA-004,SIMULATED,Mon,Admin,Update client CRM with 12 new inbound leads,P2,Done,40,35,No,HubSpot Free
+VA-005,SIMULATED,Tue,Meeting,Prepare briefing doc for partner call,P1,Done,45,40,Yes,Notion + Claude
+VA-006,SIMULATED,Tue,Meeting,Take minutes and send action items within 2h,P1,Done,30,30,Yes,Google Docs + Claude
+VA-007,SIMULATED,Tue,Email,Draft 5 follow-up emails for founder review,P2,Done,40,30,Yes,Gmail + ChatGPT
+VA-008,SIMULATED,Tue,Reporting,Compile weekly social metrics into sheet,P3,Done,30,35,No,Google Sheets
+VA-009,SIMULATED,Wed,Research,Competitor pricing scan (5 tools),P2,Done,60,70,Yes,Web + Sheets
+VA-010,SIMULATED,Wed,Admin,Invoice reminders for 3 overdue clients (drafts),P1,Done,20,20,No,Gmail
+VA-011,SIMULATED,Wed,Calendar,Schedule 4 interviews across 3 time zones,P2,Done,30,25,No,Calendly + Google Calendar
+VA-012,SIMULATED,Wed,Automation,Build Zap: form lead → Sheet row → Slack alert (test),P3,Done,60,75,No,Zapier Free
+VA-013,SIMULATED,Thu,Email,Inbox zero + archive rules review,P2,Done,30,20,No,Gmail filters
+VA-014,SIMULATED,Thu,Research,Summarise 3 industry reports into 1-page brief,P2,Done,60,50,Yes,Claude + manual fact-check
+VA-015,SIMULATED,Thu,Project,Update project tracker and flag 2 blockers,P1,Done,20,20,No,Notion
+VA-016,SIMULATED,Thu,Meeting,Prepare agenda for Friday team sync,P3,Done,15,10,Yes,Notion + ChatGPT
+VA-017,SIMULATED,Fri,Reporting,"Weekly report: tasks, time, risks, next week",P1,Done,45,40,Yes,Sheets + Claude
+VA-018,SIMULATED,Fri,Admin,Organise shared Drive folder structure,P3,In progress,40,25,No,Google Drive
+VA-019,SIMULATED,Fri,Research,Find 15 SaaS events in Q1 (SG/AU),P3,Not started,60,0,Yes,Web
+VA-020,SIMULATED,Fri,Email,Prepare newsletter draft for review,P2,Blocked,45,15,Yes,Canva + ChatGPT

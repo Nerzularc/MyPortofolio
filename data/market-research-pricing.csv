@@ -1,0 +1,15 @@
+vendor,plan,price_monthly_billing,price_annual_billing_per_month,currency,billing_unit,entry_volume,source_type,source_url,source_date,confidence
+Zapier,Free,0,0,USD,Tasks (successful action steps),100 tasks/mo,Official,https://zapier.com/pricing.md,2026-11-19,High
+Zapier,Professional,29.99,19.99,USD,Tasks,750 tasks/mo,Official,https://zapier.com/pricing.md,2026-11-19,High
+Zapier,Team,103.50,69.00,USD,Tasks,"2,000 tasks/mo; up to 25 users",Official,https://zapier.com/pricing.md,2026-11-19,High
+Make,Free,0,0,USD,Credits,"1,000 credits/mo",Official,https://www.make.com/en/pricing,2026-11-19,High
+Make,Core,10.59,9.00,USD,Credits,"10,000 credits/mo",Third-party,https://www.jetadmin.io/blog/make-pricing/,2026-09-26,Low – plan ladder changed twice in 2026
+Make,Pro,18.82,16.00,USD,Credits,"10,000 credits/mo",Third-party,https://www.jetadmin.io/blog/make-pricing/,2026-09-26,Low
+Make,Teams,34.12,29.00,USD,Credits,"10,000 credits/mo",Third-party,https://www.jetadmin.io/blog/make-pricing/,2026-09-26,Low
+n8n,Community (self-hosted),0,0,EUR,Software free; hosting cost extra,Self-managed,Official,https://n8n.io/pricing,2026-11-19,High
+n8n,Starter (Cloud),24,20,EUR,Workflow executions,"2,500 executions/mo",Official (annual) + third-party (monthly),https://n8n.io/pricing ; https://www.cloudzero.com/blog/n8n-pricing/,2026-11-19,High (annual) / Medium (monthly)
+n8n,Pro (Cloud),60,50,EUR,Workflow executions,"10,000 executions/mo",Official (annual) + third-party (monthly),https://n8n.io/pricing ; https://www.cloudzero.com/blog/n8n-pricing/,2026-11-19,High (annual) / Medium (monthly)
+n8n,Business (self-hosted),800,667,EUR,Workflow executions,"40,000 executions/mo",Official (annual) + third-party (monthly),https://n8n.io/pricing ; https://www.cloudzero.com/blog/n8n-pricing/,2026-11-19,High (annual) / Medium (monthly)
+Microsoft Power Automate,Premium,n/a,15,USD,Per user,Premium connectors + attended RPA,Third-party (checked vs Microsoft page),https://www.softr.io/blog/power-automate-pricing,2026-10-28,Medium
+Microsoft Power Automate,Process,n/a,150,USD,Per bot,Unattended RPA,Third-party,https://www.flowforma.com/blog/power-automate-pricing,2026-09-02,Medium
+Activepieces,Plus,20,n/a,USD,Credits / active flows (model changed in 2026),See vendor page,Third-party,https://costbench.com/software/ai-automation/activepieces/hidden-costs/,2026-11,Low – conflicting reports
